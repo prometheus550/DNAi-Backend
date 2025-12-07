@@ -1,4 +1,4 @@
-package com.dnai.dto;
+package com.dnai.dtos;
 
 public  class DoctorCreateRequest{
 
