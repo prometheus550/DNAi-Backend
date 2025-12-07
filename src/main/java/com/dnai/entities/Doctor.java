@@ -24,20 +24,20 @@ private String speciality;
 
 public Doctor() {}
 
-public Long getid(){return id;}
-public void setid(Long id){this.id = id;}
+public Long getId(){return id;}
+public void setId(Long id){this.id = id;}
 
 public String getName(){return name;}
 public void setName(String name){this.name = name;}
 
-public String getemail(){return email;}
-public void setemail(String email){this.email = email;}
+public String getEmail(){return email;}
+public void setEmail(String email){this.email = email;}
 
-public String getpasswordHash(){return passwordHash;}
-public void setpasswordHash(String passwordHash){this.passwordHash = passwordHash;}
+public String getPasswordHash(){return passwordHash;}
+public void setPasswordHash(String passwordHash){this.passwordHash = passwordHash;}
 
-public String getspeciality(){return speciality;}
-public void setspeciality(String speciality){this.speciality = speciality;}
+public String getSpeciality(){return speciality;}
+public void setSpeciality(String speciality){this.speciality = speciality;}
 
 
 }

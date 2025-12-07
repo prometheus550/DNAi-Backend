@@ -2,8 +2,9 @@ package com.dnai.services;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.dnai.dtos.DoctorCreateRequest;
 import com.dnai.entities.Doctor;
-import com.dnai.dto.DoctorCreateRequest;
 import com.dnai.repositories.DoctorRepo;
 
 @Service
@@ -20,7 +21,10 @@ public class DoctorService {
         Doctor doctor = new Doctor();
         
         doctor.setName(request.getName());
-        return doctor;
+        doctor.setEmail(request.getEmail());
+        doctor.setPasswordHash(request.getPasswordHash());
+        doctor.setSpeciality(request.getSpeciality());
+        return doctorRepo.save(doctor);
 
 
     }
