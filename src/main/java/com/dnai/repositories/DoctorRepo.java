@@ -6,5 +6,5 @@ import com.dnai.entities.Doctor;
 
 public interface DoctorRepo extends JpaRepository<Doctor, Long> {
 
-    Optional<Doctor> findByEmail(String email);  
+    Optional<Doctor> findById(long id);  
 }

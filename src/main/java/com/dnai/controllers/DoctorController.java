@@ -1,9 +1,6 @@
 package com.dnai.controllers;
 
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.net.http.HttpRequest;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
