@@ -1,6 +1,6 @@
 package com.dnai.entities;
 
-import jakarta.persistence.*;;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Doctors")
@@ -8,7 +8,7 @@ import jakarta.persistence.*;;
 public class Doctor{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private long id;
+private Long id;
 
 @Column(nullable = false)
 private String name;

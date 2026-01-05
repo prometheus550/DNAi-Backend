@@ -2,21 +2,21 @@ package com.dnai.services;
 
 import org.springframework.stereotype.Service;
 
-import com.dnai.dtos.DiagnosisCreateRequest;
+import com.dnai.dtos.DiagnosisRequestDTO;
 import com.dnai.entities.Diagnosis;
-import com.dnai.repositories.DiagnosisRepo;
+import com.dnai.repositories.DiagnosisRepository;
 
 
 @Service
 public class DiagnosisService {
 
-    private final DiagnosisRepo diagnosisRepo; 
+    private final DiagnosisRepository diagnosisRepo; 
 
-    public DiagnosisService(DiagnosisRepo diagnosisRepo){
+    public DiagnosisService(DiagnosisRepository diagnosisRepo){
         this.diagnosisRepo = diagnosisRepo;
     
     }
-        public Diagnosis createDiagnosis(DiagnosisCreateRequest request){
+        public Diagnosis createDiagnosis(DiagnosisRequestDTO request){
             Diagnosis diagnosis = new Diagnosis();
 
             diagnosis.setDiagnosis(request.getDiagnosis());

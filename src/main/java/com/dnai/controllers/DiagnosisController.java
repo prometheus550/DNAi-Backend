@@ -5,12 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.dnai.dtos.DiagnosisCreateRequest;
+import com.dnai.dtos.DiagnosisRequestDTO;
+import com.dnai.dtos.DiagnosisResponseDTO;
 import com.dnai.entities.Diagnosis;
 import com.dnai.services.DiagnosisService;
 
-@RequestController
+@RestController
 @RequestMapping("/api/diagnosis")
 
 public class DiagnosisController {
@@ -20,8 +22,13 @@ public class DiagnosisController {
         this.diagnosisService = diagnosisService;
     }
 @PostMapping
-public ResponseEntity<Diagnosis> createDiagnosis(@RequestBody DiagnosisCreateRequest request){
-    Diagnosis saved = diagnosisService.createDiagnosis((request));
+public ResponseEntity<Diagnosis> createDiagnosis(@RequestBody DiagnosisRequestDTO request){
+    Diagnosis saved = diagnosisService.createDiagnosis(request);
+
+    DiagnosisResponseDTO responseDTO = new DiagnosisResponseDTO();
+    responseDTO.setDiagnosis(saved.getDiagnosis());
+    responseDTO.setConfidenceScore(saved.getConfidenceScore());
+    
     return new ResponseEntity<>(saved, HttpStatus.CREATED);
 }
 }

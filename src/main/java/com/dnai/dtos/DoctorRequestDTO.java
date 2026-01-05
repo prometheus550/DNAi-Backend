@@ -1,6 +1,6 @@
 package com.dnai.dtos;
 
-public  class DoctorCreateRequest{
+public  class DoctorRequestDTO{
 
     private String name;
     private String email;
@@ -11,10 +11,10 @@ public String getName(){return name;}
 public void setName(String name){this.name = name;}
 
 public String getEmail(){return email;}
-public void setemail(String email){this.email = email;}
+public void setEmail(String email){this.email = email;}
 
-public String getPasswordHash(){return password;}
-public void setPasswordHash(String password){this.password = password;}
+public String getPassword(){return password;}
+public void setPassword(String password){this.password = password;}
 
 public String getSpeciality(){return speciality;}
 public void setSpeciality(String speciality){this.speciality = speciality;}

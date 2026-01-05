@@ -1,6 +1,6 @@
 package com.dnai.dtos;
 
-public class DiagnosisCreateRequest {
+public class DiagnosisRequestDTO {
 
     private String diagnosis;
     private float confidenceScore;
