@@ -13,7 +13,7 @@ import com.dnai.entities.Diagnosis;
 import com.dnai.services.DiagnosisService;
 
 @RestController
-@RequestMapping("/api/diagnosis")
+@RequestMapping("/api/diagnoses")
 
 public class DiagnosisController {
     private final DiagnosisService diagnosisService;
@@ -22,13 +22,16 @@ public class DiagnosisController {
         this.diagnosisService = diagnosisService;
     }
 @PostMapping
-public ResponseEntity<Diagnosis> createDiagnosis(@RequestBody DiagnosisRequestDTO request){
+public ResponseEntity<DiagnosisResponseDTO> createDiagnosis(@RequestBody DiagnosisRequestDTO request){ // Change return type
     Diagnosis saved = diagnosisService.createDiagnosis(request);
 
     DiagnosisResponseDTO responseDTO = new DiagnosisResponseDTO();
+    
     responseDTO.setDiagnosis(saved.getDiagnosis());
     responseDTO.setConfidenceScore(saved.getConfidenceScore());
-    
-    return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    responseDTO.setPatientId(saved.getPatient().getId());
+    responseDTO.setDoctorId(saved.getDoctor().getId());
+ 
+    return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
 }
 }

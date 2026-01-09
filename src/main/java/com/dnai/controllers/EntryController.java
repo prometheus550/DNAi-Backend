@@ -27,6 +27,6 @@ public class EntryController {
     
     @GetMapping("/{patientId}")
     public List<EntryResponseDTO> getEntries(@PathVariable Long patientId) {
-        return entryService.getEntriesForPatient(patientId);
+        return entryService.getentriesForPatient(patientId);
     }
 }

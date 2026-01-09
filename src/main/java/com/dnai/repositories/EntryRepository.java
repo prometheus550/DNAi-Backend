@@ -1,6 +1,6 @@
 package com.dnai.repositories;
 
-import com.dnai.backend.entity.Entry;
+import com.dnai.entities.Entry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 

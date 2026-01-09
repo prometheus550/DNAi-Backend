@@ -1,4 +1,4 @@
-package com.dnai.backend;
+package com.dnai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

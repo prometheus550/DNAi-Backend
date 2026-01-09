@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service 
@@ -21,11 +22,11 @@ public class PatientService {
     
     public PatientResponseDTO createPatient(PatientRequestDTO request, String doctorEmail) {
         
-        
+
         Doctor doctor = doctorRepo.findByEmail(doctorEmail)
                 .orElseThrow(() -> new RuntimeException("Doctor not found with email: " + doctorEmail));
 
-        
+
         Patient patient = new Patient();
         patient.setName(request.getName());
         patient.setAge(request.getAge());
@@ -46,7 +47,7 @@ public class PatientService {
                 savedPatient.getName(),
                 savedPatient.getAge(),
                 savedPatient.getInitialSymptoms(),
-                doctor.getemail() 
+                doctor.getEmail() 
         );
     }
 

@@ -23,12 +23,12 @@ public class Diagnosis {
 
     public Diagnosis(){}
     
-    public Long getDoctorId(){return id;}
-    public void setDoctorId(Long id){this.id = id;}
+    public Patient getPatient() { return patient; }
+    public void setPatient(Patient patient) { this.patient = patient; }
 
-    public Long getPatientId(){return id;}
-    public void setPatientId(Long id){this.id = id;}
-
+    public Doctor getDoctor() { return doctor; }
+    public void setDoctor(Doctor doctor) { this.doctor = doctor; }
+    
     public String getDiagnosis(){return diagnosis;}
     public void setDiagnosis(String diagnosis){this.diagnosis = diagnosis;}
 

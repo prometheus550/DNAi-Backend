@@ -10,7 +10,7 @@ import com.dnai.entities.Doctor;
 import com.dnai.services.DoctorService;
 
 @RestController
-@RequestMapping("/api/Doctor")
+@RequestMapping("/api/doctors")
 
 public class DoctorController {
     private final DoctorService doctorService;
@@ -20,7 +20,7 @@ public class DoctorController {
     }
 
 
-@PostMapping
+@PostMapping("/register")
 public ResponseEntity<Doctor> createDoctor(@RequestBody DoctorRequestDTO request){
 
     Doctor saved = doctorService.createDoctor(request);

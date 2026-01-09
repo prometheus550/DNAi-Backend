@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class EntryService {
     
-    @Autowired private EntryRepositry entryRepo;
+    @Autowired private EntryRepository entryRepo;
     @Autowired private PatientRepository patientRepo;
 
     public EntryResponseDTO createEntry(Long patientId, EntryRequestDTO request){
@@ -29,7 +29,7 @@ public class EntryService {
         entry.setBody(request.getBody());
         entry.setTags(request.getTags());
 
-        Entry.setPatient(patient);
+        entry.setPatient(patient);
 
         Entry savedEntry = entryRepo.save(entry);
 

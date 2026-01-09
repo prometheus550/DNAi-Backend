@@ -31,5 +31,15 @@ public class Entry {
         this.creationDate = LocalDateTime.now();
     }
 
-    
+    public Entry() {}
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getBody() { return body; }
+    public void setBody(String body) { this.body = body; }
+    public String getTags() { return tags; }
+    public void setTags(String tags) { this.tags = tags; }
+    public LocalDateTime getCreationDate() { return creationDate; }
+    public Long getId() { return id; }
+    public Patient getPatient() { return patient; }
+    public void setPatient(Patient patient) { this.patient = patient; }
 }

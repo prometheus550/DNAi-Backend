@@ -1,4 +1,4 @@
-package com.dnai.backend;
+package com.dnai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
